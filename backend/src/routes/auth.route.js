@@ -1,7 +1,8 @@
 import express from "express";
 import { signup,login,logout,updateProfile,checkAuth } from "../controllers/auth.controller.js";
 import { protectRoute } from "../middlewares/auth.middleware.js";
-
+import multer from "multer";
+const upload = multer({ limits: { fileSize: 5 * 1024 * 1024 } }); // 5MB limit
 
 const router = express.Router()
 
